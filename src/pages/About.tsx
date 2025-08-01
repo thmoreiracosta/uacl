@@ -5,7 +5,7 @@ export const About: React.FC = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-primary py-16 md:py-24 relative">
+      <section className="bg-primary mt-24 md:py-24 relative">
         <div className="absolute inset-0 opacity-10 cross-pattern"></div>
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="text-center">
@@ -63,7 +63,7 @@ export const About: React.FC = () => {
               <div className="absolute -top-6 -left-6 w-full h-full border-2 border-secondary"></div>
               <div className="bg-white p-2">
                 <img
-                  src="https://images.unsplash.com/photo-1548625149-fc4a29cf7092?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  src="../src/assets/uacl-1.jpg"
                   alt="Missão da União Apostólica"
                   className="w-full h-auto"
                 />
@@ -155,7 +155,7 @@ export const About: React.FC = () => {
               <div className="md:w-1/3">
                 <div className="bg-white p-2 border border-gray-200">
                   <img
-                    src="https://images.unsplash.com/photo-1548625149-fc4a29cf7092?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    src="../src/assets/Forum-08-de-08-scaled.jpg"
                     alt="Fundação"
                     className="w-full h-auto"
                   />
@@ -198,7 +198,7 @@ export const About: React.FC = () => {
               <div className="md:w-1/3 order-1 md:order-2">
                 <div className="bg-white p-2 border border-gray-200">
                   <img
-                    src="https://images.unsplash.com/photo-1548625149-fc4a29cf7092?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    src="../src/assets/SEC-11-de-18.jpeg"
                     alt="Crescimento"
                     className="w-full h-auto"
                   />
@@ -210,7 +210,7 @@ export const About: React.FC = () => {
               <div className="md:w-1/3">
                 <div className="bg-white p-2 border border-gray-200">
                   <img
-                    src="https://images.unsplash.com/photo-1548625149-fc4a29cf7092?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    src="../src/assets/AS-10-de-12-scaled.jpeg"
                     alt="Atualidade"
                     className="w-full h-auto"
                   />

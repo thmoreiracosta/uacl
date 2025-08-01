@@ -149,7 +149,7 @@ export const Membership = () => {
           </div>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-full mx-auto">
           {/* Step 1: Choose Membership Type */}
           {step === 1 && (
             <div className="grid md:grid-cols-3 gap-8">

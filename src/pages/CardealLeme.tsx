@@ -29,7 +29,7 @@ export const CardealLeme: React.FC = () => {
               <div className="absolute -top-6 -left-6 w-full h-full border-2 border-secondary"></div>
               <div className="bg-white p-2">
                 <img
-                  src="https://images.unsplash.com/photo-1548625149-fc4a29cf7092?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                  src="../src/assets/Cardeal_leme.jpg"
                   alt="Cardeal Dom Sebastião Leme"
                   className="w-full h-auto"
                 />
