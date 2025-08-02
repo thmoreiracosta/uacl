@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import { eventsData } from "../data/eventsData";
-import type { Event } from "../types/event";
-import { Loader } from "../components/common/Loader";
+import { eventsData } from "../../data/eventsData";
+import type { Event } from "../../types/event";
+import { Loader } from "../../components/common/Loader";
 
 export const Events: React.FC = () => {
   const [events, setEvents] = useState<Event[]>([]);
@@ -63,7 +63,7 @@ export const Events: React.FC = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-primary py-16 md:py-24 relative">
+      <section className="bg-primary py-16 md:py-24 mt-24 relative">
         <div className="absolute inset-0 opacity-10 cross-pattern"></div>
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <div className="text-center">

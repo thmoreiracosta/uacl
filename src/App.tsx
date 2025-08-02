@@ -97,7 +97,8 @@ import { Home } from "../src/pages/Home";
 import { About } from "../src/pages/About";
 import { CardealLeme } from "../src/pages/CardealLeme";
 import { Initiatives } from "../src/pages/Initiatives";
-import { Events } from "../src/pages/Events";
+import { Events } from "../src/pages/events/Events";
+import { EventDetail } from "../src/pages/events/EventDetail";
 import { Contact } from "../src/pages/Contact";
 
 // Auth Pages
@@ -145,6 +146,7 @@ export const App: React.FC = () => {
             <Route path="cardeal-leme" element={<CardealLeme />} />
             <Route path="iniciativas" element={<Initiatives />} />
             <Route path="eventos" element={<Events />} />
+            <Route path="eventos/:id" element={<EventDetail />} />
             <Route path="contato" element={<Contact />} />
           </Route>
 

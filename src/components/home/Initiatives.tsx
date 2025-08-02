@@ -1,10 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { initiatives } from '../../data/initiativesData';
-
-
-
-
+import { initiatives } from "../../data/initiativesData";
 
 export const Initiatives: React.FC = () => {
   return (
@@ -34,25 +30,14 @@ export const Initiatives: React.FC = () => {
               key={initiative.id}
               className="bg-white p-6 border border-gray-200 hover-lift"
             >
-              <div className="w-12 h-12 rounded-full bg-primary bg-opacity-10 flex items-center justify-center mb-4">
-                <svg
-                  className="w-6 h-6 text-primary"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d={initiative.icon}
-                  ></path>
-                </svg>
+              <div className="w-28 h-28 border-2 border-primary rounded-full bg-primary bg-opacity-10 flex items-center justify-center mb-8 mx-auto">
+                <img src={initiative.image} alt="" className="rounded-full" />
               </div>
-              <h3 className="text-xl font-serif font-bold text-primary mb-3">
+
+              <h3 className="text-center text-xl font-serif font-bold text-primary mb-4">
                 {initiative.title}
               </h3>
-              <p className="text-gray-600 mb-4">{initiative.description}</p>
+              <p className="text-justify text-gray-600 mb-4">{initiative.description}</p>
               <Link
                 to={`/iniciativas/${initiative.id}`}
                 className="inline-flex items-center text-secondary hover:text-primary"

@@ -213,8 +213,9 @@ export const Footer = () => {
                   ></path>
                 </svg>
                 <div>
-                  <p className="text-gray-300">Rua São Clemente, 225</p>
-                  <p className="text-gray-300">Rio de Janeiro, RJ</p>
+                  <p className="text-gray-300">Av. das Américas, 2901</p>
+                  <p className="text-gray-300">Barra da Tijuca - Rio de Janeiro, RJ</p>
+                  <p className="text-gray-300">CEP: 22631-002</p>
                 </div>
               </li>
               <li className="flex items-center">
@@ -313,7 +314,7 @@ export const Footer = () => {
             direitos reservados.
           </p>
           <p className="text-gray-400 text-sm mt-2 md:mt-0">
-            CNPJ: 12.345.678/0001-90
+            CNPJ: 58.472.293/0001-90
           </p>
         </div>
       </div>
