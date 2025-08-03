@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import cardealLeme from "../../assets/dom-Sebastiao-Leme-da-Silveira-Cintra-229x300-1.jpg"
 
 export const Hero: React.FC = () => {
   return (
@@ -57,7 +58,7 @@ export const Hero: React.FC = () => {
               <div className="absolute -top-6 -left-6 w-full h-full border-2 border-secondary"></div>
               <div className="bg-white p-2">
                 <img
-                  src="../src/assets/dom-Sebastiao-Leme-da-Silveira-Cintra-229x300-1.jpg"
+                  src={cardealLeme}
                   alt="Cardeal Leme"
                   className="w-full h-auto scale-x-[-1]"
                 />

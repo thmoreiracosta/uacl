@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
+import logoUacl from '../../assets/LOGO2.png'
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -78,7 +79,7 @@ export const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 ml-[-10px]">
             <div className="h-20 w-20 rounded-full flex items-center justify-center border-4 border-secondary">
-              <img className="h-18 w-18" src="../src/assets/LOGO2.png" alt="logo-uniao-apostolica" />              
+              <img className="h-18 w-18" src={logoUacl} alt="logo-uniao-apostolica" />              
             </div>
             <div>
               <h1 className="text-primary font-serif text-2xl tracking-wide">União Apostólica</h1>

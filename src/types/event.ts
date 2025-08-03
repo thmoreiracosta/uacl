@@ -33,6 +33,7 @@ export interface Event {
   updatedAt: string;
   organizer: string;
   participants: string;
+  type: string;
 }
 
 export interface EventSpeaker {

@@ -25,6 +25,9 @@ export interface Course {
 
   isNew?: boolean;  // propriedade opcional adicionada
   progress?: number; // progresso do usuário no curso (0 a 100)
+  isFree?: boolean;
+  video?: string; 
+  lessons?: string[];
 }
 
 export interface CourseModule {

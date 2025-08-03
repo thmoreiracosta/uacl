@@ -109,13 +109,14 @@ import { ForgotPassword } from "../src/pages/auth/ForgotPassword";
 // Member Pages
 import { Dashboard } from "../src/pages/member/Dashboard";
 import { Profile } from "../src/pages/member/Profile";
-import { Courses } from "../src/pages/member/Courses";
+import { Courses } from "../src/pages/member/Training";
 import { Schedule } from "../src/pages/member/Schedule";
 import { Notifications } from "../src/pages/member/Notifications";
 
 // Payment Pages
 import { Membership } from "../src/pages/payment/Membership";
 import { Success } from "../src/pages/payment/Success";
+import { TestimonialsForm } from "./pages/member/TestimonialsForm";
 
 // Protected Route
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({
@@ -137,7 +138,7 @@ const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({
 export const App: React.FC = () => {
   return (
     <ThemeProvider>
-      <BrowserRouter>
+      <BrowserRouter basename="/uacl">
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={<MainLayout />}>
@@ -172,6 +173,7 @@ export const App: React.FC = () => {
             <Route path="cursos" element={<Courses />} />
             <Route path="agenda" element={<Schedule />} />
             <Route path="notificacoes" element={<Notifications />} />
+            <Route path="depoimentos" element={<TestimonialsForm />}/>
           </Route>
 
           {/* Payment Routes */}

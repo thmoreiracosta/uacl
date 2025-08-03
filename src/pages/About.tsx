@@ -1,5 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import imgMissan from '../assets/uacl-1.jpg'
+import imgFundantion from '../assets/Forum-08-de-08-scaled.jpg'
+import imgConsolidation from '../assets/SEC-11-de-18.jpeg'
+import imgCurrent from '../assets/AS-10-de-12-scaled.jpeg'
+
 
 export const About: React.FC = () => {
   return (
@@ -40,7 +45,7 @@ export const About: React.FC = () => {
                 presença da Igreja na sociedade brasileira.
               </p>
               <p className="text-gray-700 mb-6">
-                Buscamos formar líderes católicos comprometidos com a evangelização da cultura
+                Buscamos formar líderes católicos comprometidos com a evangelização 
                 e a transformação da sociedade segundo os princípios do Evangelho e da Doutrina
                 Social da Igreja.
               </p>
@@ -63,7 +68,7 @@ export const About: React.FC = () => {
               <div className="absolute -top-6 -left-6 w-full h-full border-2 border-secondary"></div>
               <div className="bg-white p-2">
                 <img
-                  src="../src/assets/uacl-1.jpg"
+                  src={imgMissan}
                   alt="Missão da União Apostólica"
                   className="w-full h-auto"
                 />
@@ -155,7 +160,7 @@ export const About: React.FC = () => {
               <div className="md:w-1/3">
                 <div className="bg-white p-2 border border-gray-200">
                   <img
-                    src="../src/assets/Forum-08-de-08-scaled.jpg"
+                    src={imgFundantion}
                     alt="Fundação"
                     className="w-full h-auto"
                   />
@@ -164,17 +169,18 @@ export const About: React.FC = () => {
               <div className="md:w-2/3">
                 <h3 className="text-2xl font-serif font-bold text-primary mb-3">Fundação</h3>
                 <p className="text-gray-700 mb-4">
-                  A União Apostólica Cardeal Leme foi fundada em 1995 por um grupo de leigos
-                  católicos comprometidos com a formação e a evangelização da cultura. Inspirados
-                  pelo exemplo do Cardeal Dom Sebastião Leme, que foi Arcebispo do Rio de Janeiro
+                  A União Apostólica Cardeal Leme foi fundada em 2024 por um grupo de leigos
+                  católicos comprometidos com a formação e a evangelização liderados pelo nosso 
+                  presidente Pedro Luiz de Affonseca. 
+                  Inspirados pelo exemplo do Cardeal Dom Sebastião Leme, que foi Arcebispo do Rio de Janeiro
                   de 1930 a 1942, esses pioneiros buscavam criar um espaço de formação integral
                   para católicos que desejavam aprofundar sua fé e seu conhecimento da doutrina
                   da Igreja.
                 </p>
                 <p className="text-gray-700">
                   Inicialmente, a União Apostólica começou com pequenos grupos de estudo e oração,
-                  mas logo se expandiu para incluir cursos de formação, retiros espirituais e
-                  atividades culturais.
+                  mas logo se expandiu para incluir cursos de formação, foruns e
+                  atividades de cunho evangelizadoras.
                 </p>
               </div>
             </div>
@@ -183,14 +189,14 @@ export const About: React.FC = () => {
               <div className="md:w-2/3 order-2 md:order-1">
                 <h3 className="text-2xl font-serif font-bold text-primary mb-3">Crescimento e Consolidação</h3>
                 <p className="text-gray-700 mb-4">
-                  Ao longo dos anos 2000, a União Apostólica Cardeal Leme experimentou um período
+                  Ao longo desse primeiro ano, a União Apostólica Cardeal Leme experimentou um período
                   de significativo crescimento e consolidação. Novos programas de formação foram
-                  desenvolvidos, parcerias com instituições acadêmicas foram estabelecidas, e o
-                  número de membros aumentou consideravelmente.
+                  desenvolvidos, parcerias com outras frentes foram sendo implementadas, e o
+                  número de membros vem aumentando consideravelmente.
                 </p>
                 <p className="text-gray-700">
-                  Em 2010, a União Apostólica inaugurou sua sede própria, que se tornou um centro
-                  de referência para a formação católica na cidade. Nesse período, também foram
+                  A União Apostólica, juntamente com o SEC - Seminário de Empresários Católicos, vem se tornando um centro
+                  de referência para a formação católica na cidade e em todo o país. Nesse período, também foram
                   iniciados projetos sociais inspirados pela Doutrina Social da Igreja, ampliando
                   a atuação da instituição para além da formação intelectual e espiritual.
                 </p>
@@ -198,7 +204,7 @@ export const About: React.FC = () => {
               <div className="md:w-1/3 order-1 md:order-2">
                 <div className="bg-white p-2 border border-gray-200">
                   <img
-                    src="../src/assets/SEC-11-de-18.jpeg"
+                    src={imgConsolidation}
                     alt="Crescimento"
                     className="w-full h-auto"
                   />
@@ -210,7 +216,7 @@ export const About: React.FC = () => {
               <div className="md:w-1/3">
                 <div className="bg-white p-2 border border-gray-200">
                   <img
-                    src="../src/assets/AS-10-de-12-scaled.jpeg"
+                    src={imgCurrent}
                     alt="Atualidade"
                     className="w-full h-auto"
                   />

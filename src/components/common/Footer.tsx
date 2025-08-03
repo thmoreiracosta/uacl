@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoUacl from "../../assets/LOGO2.png"
 
 export const Footer = () => {
   return (
@@ -11,7 +12,7 @@ export const Footer = () => {
               <div className="h-16 w-16 bg-white rounded-full flex items-center justify-center border-2 border-secondary">
                 <img
                   className="text-primary font-serif text-2xl font-bold"
-                  src="../src/assets/LOGO2.png"
+                  src={logoUacl}
                   alt="LOGO-UACL"
                 />
               </div>

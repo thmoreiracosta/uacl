@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import type { ReactNode } from 'react';
-import { login, logout, getCurrentUser } from '../services/auth';
-import { AuthContext } from '../context/AuthContext';
-import type { User } from '../types/auth';
+import { useState, useEffect } from "react";
+import type { ReactNode } from "react";
+import { login, logout, getCurrentUser } from "../services/auth";
+import { AuthContext } from "../context/AuthContext";
+import type { User } from "../types/auth";
 
 interface AuthProviderProps {
   children: ReactNode;
@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
           setUser(currentUser);
         }
       } catch (error) {
-        console.error('Failed to get current user:', error);
+        console.error("Failed to get current user:", error);
       } finally {
         setIsLoading(false);
       }
@@ -53,6 +53,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     <AuthContext.Provider
       value={{
         user,
+        setUser, // <--- adicionar aqui
         isAuthenticated: !!user,
         isLoading,
         login: handleLogin,

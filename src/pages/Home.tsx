@@ -3,6 +3,9 @@ import { Hero } from "../components/home/Hero";
 import { EventsSection } from "../components/home/EventsSection";
 import { Initiatives } from "../components/home/Initiatives";
 import { Link } from "react-router-dom";
+import videoUacl from "../assets/uacl.mp4"
+import cardealLeme from "../assets/Sebastião_Leme_1920.jpg"
+import { Testimonials } from "../components/home/Testimonials";
 
 export const Home: React.FC = () => {
   return (
@@ -67,7 +70,7 @@ export const Home: React.FC = () => {
                   playsInline
                   className="w-full h-auto"
                 >
-                  <source src="../src/assets/uacl.mp4" type="video/mp4" />
+                  <source src={videoUacl} type="video/mp4" />
                 </video>
               </div>
             </div>
@@ -127,7 +130,7 @@ export const Home: React.FC = () => {
               <div className="absolute -top-6 -right-6 w-full h-full border-2 border-secondary"></div>
               <div className="bg-white p-2">
                 <img
-                  src="../src/assets/Sebastião_Leme_1920.jpg"
+                  src={cardealLeme}
                   alt="Cardeal Dom Sebastião Leme"
                   className="w-full h-auto"
                 />
@@ -146,88 +149,7 @@ export const Home: React.FC = () => {
       <EventsSection />
 
       {/* Testimonials Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="flex justify-center items-center mb-4">
-              <div className="h-px bg-secondary w-12 mr-4"></div>
-              <span className="text-secondary uppercase tracking-widest text-sm">
-                Depoimentos
-              </span>
-              <div className="h-px bg-secondary w-12 ml-4"></div>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary">
-              O que dizem nossos membros
-            </h2>
-            <div className="w-24 h-1 bg-secondary mx-auto mt-4"></div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-cream p-6 border-t-4 border-primary">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gray-300 rounded-full mr-4">
-                  <img
-                    src="https://images.unsplash.com/photo-1548625149-fc4a29cf7092?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    alt="Membro"
-                    className="w-full h-full object-cover rounded-full"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-medium text-primary">Maria Silva</h3>
-                  <p className="text-sm text-gray-600">Membro desde 2018</p>
-                </div>
-              </div>
-              <p className="text-gray-700 italic">
-                "A União Apostólica Cardeal Leme transformou minha vida
-                espiritual e intelectual. Os cursos e eventos me ajudaram a
-                aprofundar minha fé e a encontrar respostas para as questões do
-                mundo contemporâneo."
-              </p>
-            </div>
-            <div className="bg-cream p-6 border-t-4 border-primary">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gray-300 rounded-full mr-4">
-                  <img
-                    src="https://images.unsplash.com/photo-1548625149-fc4a29cf7092?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    alt="Membro"
-                    className="w-full h-full object-cover rounded-full"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-medium text-primary">João Santos</h3>
-                  <p className="text-sm text-gray-600">Membro desde 2015</p>
-                </div>
-              </div>
-              <p className="text-gray-700 italic">
-                "Encontrei na União Apostólica um espaço de formação sólida e de
-                comunhão fraterna. Os estudos doutrinais e as atividades sociais
-                me ajudaram a integrar fé e vida de maneira concreta."
-              </p>
-            </div>
-            <div className="bg-cream p-6 border-t-4 border-primary">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gray-300 rounded-full mr-4">
-                  <img
-                    src="https://images.unsplash.com/photo-1548625149-fc4a29cf7092?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                    alt="Membro"
-                    className="w-full h-full object-cover rounded-full"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-medium text-primary">Ana Oliveira</h3>
-                  <p className="text-sm text-gray-600">Membro desde 2020</p>
-                </div>
-              </div>
-              <p className="text-gray-700 italic">
-                "Como jovem católica, encontrei na União Apostólica um lugar
-                onde posso crescer na fé sem abrir mão do rigor intelectual. Os
-                cursos e as discussões me ajudam a dialogar com a cultura
-                contemporânea."
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Testimonials />
 
       {/* CTA Section */}
       <section className="py-16 bg-primary text-white">

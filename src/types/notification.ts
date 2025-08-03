@@ -1,8 +1,9 @@
-export interface Notification {
+import type { Timestamp } from "firebase/firestore"; // para Firebase
+
+export interface UserNotification {
   id: string;
   title: string;
   message: string;
   read: boolean;
-  createdAt: string; // ou Date, dependendo do que a API retorna
-  date: string; // ou Date, se preferir
+  createdAt: string | Timestamp; // aceita os dois tipos (mock e Firebase)
 }

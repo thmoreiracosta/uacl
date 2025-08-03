@@ -1,14 +1,19 @@
 import type { Event } from "../types/event";
+import imgOne from "../assets/sec-sp.jpg";
+import imgTwo from "../assets/SEC-04-de-18.jpeg";
+import imgThree from "../assets/live-semanal.jpg";
+import imgFour from "../assets/AS-05-de-12.jpeg";
 
 export const eventsData: Event[] = [
   {
     id: "1",
     title: "SEC - Seminário para Empresários Católicos 2025 - São Paulo",
+    type: "Seminário",
     shortDescription:
       "Conectando fé e gestão para transformar o mundo empresarial.",
     description:
       "O SEC 2025 reunirá empresários católicos de todo o Brasil para refletirem sobre ética, espiritualidade e impacto social nos negócios. Com palestras, momentos de oração e networking, o evento promove uma integração profunda entre a fé cristã e o ambiente corporativo.",
-    image: "../src/assets/sec-sp.jpg",
+    image: imgOne,
     date: "2025-08-16",
     endDate: "2025-08-16",
     time: "08:00",
@@ -50,11 +55,12 @@ export const eventsData: Event[] = [
   {
     id: "2",
     title: "Fórum Rio",
+    type: "Fórum",
     shortDescription:
       "Ciência, fé e milagres no encontro entre espiritualidade e razão.",
     description:
       "O Fórum Rio é um evento internacional que reúne estudiosos, religiosos e fiéis para debater milagres, fé e a experiência espiritual em Lourdes, na França. Um espaço de reflexão sobre o extraordinário e sua relação com a verdade cristã.",
-    image: "../src/assets/SEC-04-de-18.jpeg",
+    image: imgTwo,
     date: "2025-06-21",
     endDate: "2025-06-22",
     time: "08:00",
@@ -96,11 +102,12 @@ export const eventsData: Event[] = [
   {
     id: "3",
     title: "Aulas semanais - Google Meet",
+    type: "Online",
     shortDescription:
       "Encontros semanais com espiritualidade e formação católica.",
     description:
       "Participe de nossas lives semanais com padres, religiosos e leigos que abordam temas da espiritualidade cristã, doutrina, devoções e vida de santos. Um espaço virtual para crescer na fé toda semana.",
-    image: "../src/assets/live-semanal.jpg",
+    image: imgThree,
     date: "2025-08-07",
     time: "20:00",
     location: "Online",
@@ -131,11 +138,12 @@ export const eventsData: Event[] = [
   {
     id: "4",
     title: "Medicina em Lourdes",
+    type: "Formação",
     shortDescription:
       "Uma imersão espiritual e científica nos milagres de Lourdes.",
     description:
       "Este evento reúne profissionais da saúde, pesquisadores e fiéis em uma jornada que explora os relatos de cura em Lourdes, na França. Haverá palestras, testemunhos e debates sobre a interseção entre ciência médica e fé cristã.",
-    image: "../src/assets/AS-05-de-12.jpeg",
+    image: imgFour,
     date: "2025-10-12",
     endDate: "2025-10-13",
     time: "09:00",

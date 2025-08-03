@@ -2,13 +2,35 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useAuth } from "../../hooks/useAuth";
+import { uploadProfileImage } from "../../services/uploadImage";
+import { updateUserProfileImage } from "../../services/updateUserProfile";
 
 export const Profile: React.FC = () => {
-  const { user } = useAuth();
+  const { user, setUser } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<"profile" | "password">("profile");
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file || !user) return;
+
+    try {
+      if (!user?.uid) {
+        // lidar com erro, não pode continuar
+        return;
+      }
+
+      const imageUrl = await uploadProfileImage(file, user.uid);
+      await updateUserProfileImage(user.uid, imageUrl);
+
+      // Atualiza estado local ou contexto se usar
+      setUser({ ...user, photoURL: imageUrl });
+    } catch (err) {
+      console.error("Erro ao enviar imagem:", err);
+    }
+  };
 
   const profileFormik = useFormik({
     initialValues: {
@@ -102,6 +124,17 @@ export const Profile: React.FC = () => {
         <p className="text-gray-600">
           Gerencie suas informações pessoais e senha.
         </p>
+        <label className="cursor-pointer">
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleImageUpload}
+            className="hidden"
+          />
+          <span className="bg-blue-500 text-white px-4 py-2 rounded">
+            Alterar Foto
+          </span>
+        </label>
       </div>
 
       <div className="bg-white border border-gray-200 rounded-md overflow-hidden">
