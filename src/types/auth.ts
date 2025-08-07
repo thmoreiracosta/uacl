@@ -1,9 +1,9 @@
 export interface User {
+  uid: string;
   id: string;
   name: string;
   email: string;
   photoURL?: string;
-  uid?: string;
 }
 
 export interface LoginCredentials {
@@ -11,7 +11,7 @@ export interface LoginCredentials {
   password: string;
 }
 
-export interface RegisterData {
+export interface RegisterProps {
   name: string;
   email: string;
   password: string;

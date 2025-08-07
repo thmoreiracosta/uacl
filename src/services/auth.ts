@@ -1,84 +1,110 @@
-import type { User } from "../types/auth";
+import {
+  createUserWithEmailAndPassword,
+  updateProfile,
+  signInWithEmailAndPassword,
+  signOut,
+  GoogleAuthProvider,
+  signInWithPopup,
+  onAuthStateChanged,
+  type User as FirebaseUser,
+} from "firebase/auth";
 
-// Mock de usuários
-const mockUsers = [
-  {
-    id: "1",
-    name: "João Silva",
-    email: "joao@example.com",
-    password: "password123", // usado apenas internamente para validação
-  },
-  {
-    id: "2",
-    name: "Thiago Costa",
-    email: "thiagomoreiracosta@gmail.com",
-    password: "password321"
-  },
-];
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { auth, db } from "../firebase";
+import type { User, RegisterProps } from "../types/auth";
 
-export const login = async (
-  email: string,
-  password: string
-): Promise<Omit<User, "password">> => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const user = mockUsers.find(
-        (u) => u.email === email && u.password === password
-      );
+// 🔁 Converte um FirebaseUser para o tipo User da aplicação
+const mapFirebaseUserToUser = async (
+  firebaseUser: FirebaseUser
+): Promise<User> => {
+  const userDoc = await getDoc(doc(db, "users", firebaseUser.uid));
+  const userData = userDoc.data();
 
-      if (user) {
-        const { password, ...userWithoutPassword } = user;
-        // ou para garantir que não gere warning:
-        void password;
-
-        localStorage.setItem("user", JSON.stringify(userWithoutPassword));
-        resolve(userWithoutPassword);
-      } else {
-        reject(new Error("Invalid email or password"));
-      }
-    }, 1000);
-  });
+  return {
+    id: firebaseUser.uid,
+    uid: firebaseUser.uid,
+    name: userData?.name || firebaseUser.displayName || "",
+    email: firebaseUser.email || "",
+    photoURL: userData?.photoURL || firebaseUser.photoURL || "",
+  };
 };
 
+// 🔐 LOGIN COM EMAIL/SENHA
+export const login = async (email: string, password: string): Promise<User> => {
+  const userCredential = await signInWithEmailAndPassword(auth, email, password);
+  return mapFirebaseUserToUser(userCredential.user);
+};
+
+// 🔐 LOGIN COM GOOGLE
+export const loginWithGoogle = async (): Promise<User> => {
+  const provider = new GoogleAuthProvider();
+  const result = await signInWithPopup(auth, provider);
+  const user = result.user;
+
+  const userRef = doc(db, "users", user.uid);
+  const docSnap = await getDoc(userRef);
+
+  if (!docSnap.exists()) {
+    await setDoc(userRef, {
+      uid: user.uid,
+      name: user.displayName || "",
+      email: user.email || "",
+      photoURL: user.photoURL || "",
+      historico: [],
+      agendamentos: [],
+      treinamentos: [],
+      testemunhos: [],
+      createdAt: new Date(),
+    });
+  }
+
+  return mapFirebaseUserToUser(user);
+};
+
+// 🚪 LOGOUT
 export const logout = async (): Promise<void> => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      localStorage.removeItem("user");
-      resolve();
-    }, 500);
-  });
+  await signOut(auth);
 };
 
-export const getCurrentUser = async (): Promise<Omit<
-  User,
-  "password"
-> | null> => {
+// 👤 OBTÉM USUÁRIO ATUAL
+export const getCurrentUser = async (): Promise<User | null> => {
   return new Promise((resolve) => {
-    setTimeout(() => {
-      const userStr = localStorage.getItem("user");
-      if (userStr) {
-        resolve(JSON.parse(userStr));
+    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
+      unsubscribe();
+      if (firebaseUser) {
+        const user = await mapFirebaseUserToUser(firebaseUser);
+        resolve(user);
       } else {
         resolve(null);
       }
-    }, 500);
+    });
   });
 };
 
-export const register = async (
-  userData: Omit<User, "id"> & { password: string }
-): Promise<Omit<User, "password">> => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      const newUser = {
-        id: String(mockUsers.length + 1),
-        name: userData.name,
-        email: userData.email,
-      };
+// 📝 REGISTRO DE USUÁRIO
+export const register = async ({
+  name,
+  email,
+  password,
+}: RegisterProps): Promise<User> => {
+  const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+  const user = userCredential.user;
 
-      mockUsers.push({ ...newUser, password: userData.password });
-      localStorage.setItem("user", JSON.stringify(newUser));
-      resolve(newUser);
-    }, 1000);
+  await updateProfile(user, {
+    displayName: name,
   });
+
+  await setDoc(doc(db, "users", user.uid), {
+    uid: user.uid,
+    name,
+    email,
+    photoURL: null,
+    historico: [],
+    agendamentos: [],
+    treinamentos: [],
+    testemunhos: [],
+    createdAt: new Date(),
+  });
+
+  return mapFirebaseUserToUser(user);
 };

@@ -84,22 +84,26 @@ export const EventDetail: React.FC = () => {
 
               {event.speakers && event.speakers.length > 0 && (
                 <div className="bg-white p-6 rounded-md shadow text-gray-700 leading-relaxed">
-                  <h3 className="text-xl font-bold text-primary mb-2">
-                    Palestrantes{event.speakers.length > 1 ? "s" : ""}
+                  <h3 className="text-xl font-bold text-primary mb-4">
+                    Palestrante{event.speakers.length > 1 ? "s" : ""}
                   </h3>
-                  <div className="flex items-center gap-4">
-                    <img
-                      src={event.speakers[0].avatar}
-                      alt={event.speakers[0].name}
-                      className="w-16 h-16 rounded-full object-cover border"
-                    />
-                    <div>
-                      <p className="font-semibold">{event.speakers[0].name}</p>
-                      <p className="text-sm text-gray-500">
-                        {event.speakers[0].title}
-                      </p>
-                      <p className="text-sm mt-1">{event.speakers[0].bio}</p>
-                    </div>
+                  <div className="flex flex-col gap-6">
+                    {event.speakers.map((speaker) => (
+                      <div key={speaker.id} className="flex items-center gap-4">
+                        <img
+                          src={speaker.avatar}
+                          alt={speaker.name}
+                          className="w-16 h-16 rounded-full object-cover border"
+                        />
+                        <div>
+                          <p className="font-semibold">{speaker.name}</p>
+                          <p className="text-sm text-gray-500">
+                            {speaker.title}
+                          </p>
+                          <p className="text-sm mt-1">{speaker.bio}</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               )}

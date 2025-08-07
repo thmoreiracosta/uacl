@@ -194,7 +194,7 @@ export const Events: React.FC = () => {
                       </svg>
                       <span className="text-sm">{event.location}</span>
                     </div>
-                    <p className="text-gray-600 mb-4">{event.description}</p>
+                    <p className="text-gray-600 mb-4">{event.shortDescription}</p>
                     <Link
                       to={`/eventos/${event.id}`}
                       className="inline-flex items-center text-secondary hover:text-primary"

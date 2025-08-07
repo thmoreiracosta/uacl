@@ -3,6 +3,7 @@ import imgOne from "../assets/sec-sp.jpg";
 import imgTwo from "../assets/SEC-04-de-18.jpeg";
 import imgThree from "../assets/live-semanal.jpg";
 import imgFour from "../assets/AS-05-de-12.jpeg";
+import imgFive from "../assets/forum-rio-sports.jpeg";
 
 export const eventsData: Event[] = [
   {
@@ -34,7 +35,49 @@ export const eventsData: Event[] = [
     registeredCount: 0,
     speakers: [
       {
-        id: "s1",
+        id: "s1-1",
+        name: "Vinícius Duarte",
+        title: "Arcebispo de São Paulo",
+        bio: "Referência em espiritualidade no ambiente de trabalho.",
+        avatar: "/images/speakers/dom-joao.jpg",
+      },
+      {
+        id: "s1-2",
+        name: "Eduardo Marques",
+        title: "Arcebispo de São Paulo",
+        bio: "Referência em espiritualidade no ambiente de trabalho.",
+        avatar: "/images/speakers/dom-joao.jpg",
+      },
+      {
+        id: "s1-3",
+        name: "Pedro Affonseca",
+        title: "Arcebispo de São Paulo",
+        bio: "Referência em espiritualidade no ambiente de trabalho.",
+        avatar: "/images/speakers/dom-joao.jpg",
+      },
+      {
+        id: "s1-4",
+        name: "Dr. Fábio Magalhães",
+        title: "Arcebispo de São Paulo",
+        bio: "Referência em espiritualidade no ambiente de trabalho.",
+        avatar: "/images/speakers/dom-joao.jpg",
+      },
+      {
+        id: "s1-5",
+        name: "Dr. Felipe Cruz",
+        title: "Arcebispo de São Paulo",
+        bio: "Referência em espiritualidade no ambiente de trabalho.",
+        avatar: "/images/speakers/dom-joao.jpg",
+      },
+      {
+        id: "s1-6",
+        name: "Dr. Paulo R. Lima",
+        title: "Arcebispo de São Paulo",
+        bio: "Referência em espiritualidade no ambiente de trabalho.",
+        avatar: "/images/speakers/dom-joao.jpg",
+      },
+      {
+        id: "s1-7",
         name: "Dom João Batista",
         title: "Arcebispo de São Paulo",
         bio: "Referência em espiritualidade no ambiente de trabalho.",
@@ -43,7 +86,7 @@ export const eventsData: Event[] = [
     ],
     price: 150,
     isFree: false,
-    requiresMembership: false,
+    requiresMembership: true,
     categories: ["Negócios", "Fé", "Liderança"],
     tags: ["católico", "empreendedorismo", "gestão"],
     isFeatured: true,
@@ -90,7 +133,7 @@ export const eventsData: Event[] = [
     ],
     price: 200,
     isFree: false,
-    requiresMembership: false,
+    requiresMembership: true,
     categories: ["Fé", "Milagres", "Espiritualidade"],
     tags: ["lourdes", "milagres", "fé"],
     isFeatured: true,
@@ -144,8 +187,8 @@ export const eventsData: Event[] = [
     description:
       "Este evento reúne profissionais da saúde, pesquisadores e fiéis em uma jornada que explora os relatos de cura em Lourdes, na França. Haverá palestras, testemunhos e debates sobre a interseção entre ciência médica e fé cristã.",
     image: imgFour,
-    date: "2025-10-12",
-    endDate: "2025-10-13",
+    date: "2024-10-12",
+    endDate: "2024-10-13",
     time: "09:00",
     endTime: "18:00",
     location: "Centro de Convenções Lourdes Vitae - Belo Horizonte",
@@ -181,5 +224,93 @@ export const eventsData: Event[] = [
     updatedAt: "2025-07-25T14:00:00Z",
     organizer: "Instituto Lourdes Vitae",
     participants: "profissionais-da-saude-cristaos",
+  },
+  {
+    id: "5",
+    title: "Forum Rio Esportes 2025",
+    type: "Fórum",
+    shortDescription:
+      "Transformando a realidade de jovens por meio do esporte, cidadania e combate à violência.",
+    description:
+      "No próximo dia 23 de agosto de 2025, o Centro de Convenções Mario Henrique Simonsen, na Barra da Tijuca, Rio de Janeiro, receberá o Forum Rio Esportes 2025, evento que promete reunir grandes profissionais do esporte, legisladores, atletas, empresários, lideranças comunitárias e a sociedade civil em um diálogo essencial sobre o papel do esporte no Brasil. Com o tema “Esporte, Cidadania e Combate à Violência”, o fórum contará com a presença de nomes que marcaram gerações e continuam inspirando novos talentos. Além de palestras, painéis e histórias de superação, o evento visa ampliar o debate sobre políticas públicas, leis de incentivo, inclusão e formação integral de atletas no país.",
+    image: imgFive, // substitua por sua variável de imagem
+    date: "2025-08-23",
+    endDate: "2025-08-23",
+    time: "09:00",
+    endTime: "18:00",
+    location: "Centro de Convenções Mario Henrique Simonsen - Barra da Tijuca",
+    address: {
+      street: "Av. Gen. Severiano, 1000",
+      city: "Rio de Janeiro",
+      state: "RJ",
+      zipCode: "22631-151",
+      country: "Brasil",
+    },
+    isOnline: false,
+    meetingUrl: "",
+    meetingId: "",
+    meetingPassword: "",
+    capacity: 800,
+    registeredCount: 0,
+    speakers: [
+      {
+        id: "s5-1",
+        name: "Grafite",
+        title: "Ex-jogador da Seleção Brasileira",
+        bio: "Ídolo nacional e internacional, com história inspiradora no futebol.",
+        avatar: "/images/speakers/grafite.jpg",
+      },
+      {
+        id: "s5-2",
+        name: "José Neto",
+        title: "Técnico olímpico de basquete",
+        bio: "Referência em gestão técnica e liderança de equipes de alto rendimento.",
+        avatar: "/images/speakers/jose-neto.jpg",
+      },
+      {
+        id: "s5-3",
+        name: "Fabiana Bentes",
+        title: "Presidente da ONG Sou do Esporte",
+        bio: "Especialista em políticas públicas e projetos sociais esportivos.",
+        avatar: "/images/speakers/fabiana-bentes.jpg",
+      },
+      {
+        id: "s5-4",
+        name: "Léo Lindoso",
+        title: "Atleta profissional de Teqball",
+        bio: "Reconhecido mundialmente como um dos melhores no esporte emergente Teqball.",
+        avatar: "/images/speakers/leo-lindoso.jpg",
+      },
+      {
+        id: "s5-5",
+        name: "Savério Scapart",
+        title: "Idealizador do VMB Capoeira",
+        bio: "Criador de uma competição inovadora que projeta atletas brasileiros globalmente.",
+        avatar: "/images/speakers/saverio-scapart.jpg",
+      },
+      {
+        id: "s5-6",
+        name: "Renata Mansur",
+        title: "Presidente da OAB Barra da Tijuca",
+        bio: "Especialista em Direito Esportivo com ampla atuação jurídica no setor.",
+        avatar: "/images/speakers/renata-mansur.jpg",
+      },
+    ],
+    price: 89,
+    isFree: false,
+    requiresMembership: true,
+    categories: ["Esporte", "Cidadania", "Juventude"],
+    tags: [
+      "esporte",
+      "cidadania",
+      "violência",
+      "juventude",
+      "projetos sociais",
+    ],
+    isFeatured: true,
+    createdAt: "2025-08-07T12:00:00Z",
+    updatedAt: "2025-08-07T12:00:00Z",
+    organizer: "Forum Rio - Diretoria Marcus Tavares e Pedro Luiz de Affonseca",
+    participants: "atletas-legisladores-comunidade",
   },
 ];

@@ -103,7 +103,6 @@ import { Contact } from "../src/pages/Contact";
 
 // Auth Pages
 import { Login } from "../src/pages/auth/Login";
-import { Register } from "../src/pages/auth/Register";
 import { ForgotPassword } from "../src/pages/auth/ForgotPassword";
 
 // Member Pages
@@ -117,6 +116,7 @@ import { Notifications } from "../src/pages/member/Notifications";
 import { Membership } from "../src/pages/payment/Membership";
 import { Success } from "../src/pages/payment/Success";
 import { TestimonialsForm } from "./pages/member/TestimonialsForm";
+import {AccountSettings} from "./pages/member/AccountSettings";
 
 // Protected Route
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({
@@ -153,8 +153,7 @@ export const App: React.FC = () => {
 
           {/* Auth Routes */}
           <Route path="/" element={<AuthLayout />}>
-            <Route path="login" element={<Login />} />
-            <Route path="cadastro" element={<Register />} />
+            <Route path="login" element={<Login />} />            
             <Route path="esqueci-senha" element={<ForgotPassword />} />
           </Route>
 
@@ -174,6 +173,7 @@ export const App: React.FC = () => {
             <Route path="agenda" element={<Schedule />} />
             <Route path="notificacoes" element={<Notifications />} />
             <Route path="depoimentos" element={<TestimonialsForm />}/>
+            <Route path="assinatura" element={<AccountSettings />}/>
           </Route>
 
           {/* Payment Routes */}

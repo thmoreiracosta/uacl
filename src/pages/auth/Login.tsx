@@ -43,7 +43,6 @@ export const Login = () => {
       <h2 className="text-2xl font-serif font-bold text-primary mb-6 text-center">
         Entrar
       </h2>
-
       {error && (
         <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded mb-4">
           {error}
@@ -144,12 +143,12 @@ export const Login = () => {
 
       <div className="mt-6 text-center">
         <p className="text-sm text-gray-600">
-          Não tem uma conta?{" "}
+          Ainda não é membro?{" "}
           <Link
-            to="/cadastro"
-            className="font-medium text-secondary hover:text-primary"
+            to="/seja-membro"
+            className="font-medium text-secondary hover:text-primary ml-1"
           >
-            Cadastre-se
+            Seja membro!
           </Link>
         </p>
       </div>

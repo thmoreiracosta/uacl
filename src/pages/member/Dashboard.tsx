@@ -7,6 +7,7 @@ import type { Course } from "../../types/course";
 import { trainingData } from "../../data/trainingData"; // ajuste o caminho conforme necessário
 import { eventsData } from "../../data/eventsData";
 import { mockNotifications } from "../../data/notificationsData";
+import { format } from "date-fns";
 
 export const Dashboard = () => {
   const { user } = useAuth();
@@ -41,7 +42,6 @@ export const Dashboard = () => {
       </div>
     );
   }
-
 
   return (
     <div>
@@ -78,7 +78,7 @@ export const Dashboard = () => {
               </svg>
             </div>
             <div>
-              <p className="text-gray-500 text-sm">Cursos em Andamento</p>
+              <p className="text-gray-500 text-sm">Formações em Andamento</p>
               <p className="text-2xl font-bold text-primary">
                 {courses.length}
               </p>
@@ -322,9 +322,14 @@ export const Dashboard = () => {
                     {notification.message}
                   </p>
                   <p className="text-gray-500 text-xs mt-2">
-                    format( new Date( typeof notification.createdAt === 'string'
-                    ? notification.createdAt : notification.createdAt.toDate()
-                    ), 'dd/MM/yyyy' )
+                    {format(
+                      new Date(
+                        typeof notification.createdAt === "string"
+                          ? notification.createdAt
+                          : notification.createdAt.toDate()
+                      ),
+                      "dd/MM/yyyy"
+                    )}
                   </p>
                 </div>
               ))

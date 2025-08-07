@@ -12,11 +12,12 @@ export const DashboardLayout = () => {
 
   const navigation = [
     { name: "Dashboard", href: "/membro/dashboard", icon: "HomeIcon" },
-    { name: "Cursos", href: "/membro/cursos", icon: "AcademicCapIcon" },
+    { name: "Formações", href: "/membro/cursos", icon: "AcademicCapIcon" },
     { name: "Agenda", href: "/membro/agenda", icon: "CalendarIcon" },
     { name: "Notificações", href: "/membro/notificacoes", icon: "BellIcon" },
-    { name: "Perfil", href: "/membro/perfil", icon: "UserIcon" },
     { name: "Depoimentos", href: "/membro/depoimentos", icon: "ChatIcon" },
+    { name: "Minha Assinatura", href: "/membro/assinatura", icon: ""},
+    { name: "Perfil", href: "/membro/perfil", icon: "UserIcon" },
   ];
 
   return (
@@ -136,7 +137,7 @@ export const DashboardLayout = () => {
                 ))}
               </nav>
             </div>
-            <div className="flex-shrink-0 flex border-t border-secondary p-4">
+            <div className="flex-shrink-0 flex border-t border-gray-500 p-4">
               <div className="flex items-center">
                 <div>
                   <div className="text-sm font-medium leading-none text-white">
